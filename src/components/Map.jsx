@@ -1,4 +1,4 @@
-import styles from "./map.module.css";
+import styles from "./Map.module.css";
 import {
     MapContainer,
     TileLayer,
