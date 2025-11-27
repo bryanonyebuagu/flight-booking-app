@@ -1,5 +1,5 @@
 
-import styles from "./Cityitem.module.css";
+import styles from "./CityItem.module.css";
 import { Link } from "react-router-dom";
 import { useCities } from "./contexts/CitiesContext";
 
@@ -7,7 +7,7 @@ import { useCities } from "./contexts/CitiesContext";
 
 function Cityitem({ city }) {
     const { currentCity } = useCities();
-    const { cityName, date, id, position } = city;
+    const { date, id, position } = city;
 
     function flagemojiToPNG(flag) {
         let countryCode = Array.from(flag, (codeUnit) => codeUnit.codePointAt())
