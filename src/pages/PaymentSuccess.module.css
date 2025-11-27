@@ -1,0 +1,55 @@
+/* src/pages/PaymentSuccess.module.css */
+
+.wrapper {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #0f172a, #020617);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+
+.card {
+  background: #0b1220;
+  color: #f8fafc;
+  max-width: 640px;
+  width: 100%;
+  padding: 32px;
+  border-radius: 16px;
+  box-shadow: 0 0 50px rgba(0, 0, 0, 0.4);
+  text-align: center;
+}
+
+.title {
+  color: #22c55e;
+  font-size: 2rem;
+  font-weight: 800;
+  margin-bottom: 12px;
+}
+
+.mainText {
+  font-size: 1.2rem;
+  margin-bottom: 10px;
+}
+
+.note {
+  color: #e5e7eb;
+  margin-bottom: 20px;
+  font-size: 1rem;
+}
+
+.infoBox {
+  background: #020617;
+  border: 1px solid #1e293b;
+  padding: 16px;
+  border-radius: 12px;
+  margin: 20px 0;
+  font-size: 0.95rem;
+  color: #cbd5f5;
+}
+
+.footer {
+  margin-top: 20px;
+  font-size: 0.9rem;
+  color: #9ca3af;
+}

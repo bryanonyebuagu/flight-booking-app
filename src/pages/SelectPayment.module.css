@@ -1,0 +1,74 @@
+.payWrapper {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #f5f7fb;
+}
+
+.payBox {
+  background: white;
+  width: 90%;
+  max-width: 720px;
+  padding: 30px 25px;
+  border-radius: 14px;
+  box-shadow: 0 12px 25px rgba(0,0,0,0.08);
+  text-align: center;
+  color: #050505;
+}
+
+.sub {
+  color: #050505;
+  margin-bottom: 25px;
+}
+
+.payGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(135px, 1fr));
+  gap: 18px;
+}
+
+.payCard {
+  background: #f1e7e7;
+  border-radius: 12px;
+  padding: 20px 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  transition: 0.2s;
+}
+
+.payCard img {
+  width: 45px;
+  height: auto;
+  margin-bottom: 8px;
+  object-fit: contain;
+}
+
+.payCard span {
+  font-weight: 600;
+  font-size: 14px;
+  color: black
+}
+
+.active {
+  border: 2px solid #f7931a;
+  cursor: pointer;
+}
+
+.active:hover {
+  background: #fff7ec;
+  transform: scale(1.04);
+}
+
+.locked {
+  opacity: 0.45;
+  filter: grayscale(100%);
+}
+
+.payCard small {
+  margin-top: 5px;
+  font-size: 11px;
+  color: crimson;
+}

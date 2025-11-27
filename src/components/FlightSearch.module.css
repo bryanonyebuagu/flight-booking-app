@@ -1,0 +1,236 @@
+/* FlightSearch.module.css */
+
+/* Theme vars — tweak these to match your app */
+:root {
+  --bg: #ffffff;
+  --card-bg: #fbfcfd;
+  --muted: #6b7280;
+  --text: #111827;
+  --accent: #2563eb;      /* primary action color */
+  --accent-600: #1e40af;
+  --glass: rgba(37,99,235,0.06);
+  --radius: 12px;
+  --shadow: 0 6px 18px rgba(17,24,39,0.08);
+  --input-height: 44px;
+}
+
+/* Card wrapper */
+.card {
+  width: 100%;
+  max-width: 980px;
+  margin: 24px auto;
+  background: linear-gradient(180deg, var(--card-bg), #fff);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  padding: 18px;
+  box-sizing: border-box;
+  font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+  color: var(--text);
+  display: grid;
+  gap: 14px;
+}
+
+/* Top tab row */
+.tabs {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+
+/* Generic tab button */
+.tab,
+.active,
+.tabDisabled {
+  border: 0;
+  padding: 8px 14px;
+  border-radius: 10px;
+  font-weight: 600;
+  cursor: pointer;
+  height: 36px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform .08s ease, box-shadow .12s ease;
+  background: transparent;
+  color: var(--muted);
+  box-shadow: none;
+}
+
+/* Normal tab hover */
+.tab:hover {
+  transform: translateY(-1px);
+  color: var(--text);
+  background: rgba(15,23,42,0.03);
+}
+
+/* Active tab style */
+.active {
+  background: linear-gradient(90deg, var(--glass), rgba(37,99,235,0.08));
+  color: var(--accent-600);
+  box-shadow: 0 4px 12px rgba(37,99,235,0.08);
+}
+
+/* Disabled tab */
+.tabDisabled {
+  opacity: 0.45;
+  cursor: not-allowed;
+}
+
+/* Inputs grid */
+.card > input,
+.card > select,
+.card > .extras input,
+.card > .extras select {
+  height: var(--input-height);
+  border-radius: 10px;
+  border: 1px solid #e6e9ee;
+  padding: 0 12px;
+  font-size: 14px;
+  outline: none;
+  background: #fff;
+  color: var(--text);
+  transition: border-color .12s ease, box-shadow .12s ease;
+  box-sizing: border-box;
+  width: 100%;
+}
+
+/* Input focus */
+.card > input:focus,
+.card > select:focus,
+.card > .extras input:focus,
+.card > .extras select:focus {
+  border-color: var(--accent);
+  box-shadow: 0 6px 20px rgba(37,99,235,0.06);
+}
+
+/* Layout for main inputs: responsive grid */
+.card {
+  grid-template-columns: 1fr;
+}
+
+@media (min-width: 720px) {
+  .card {
+    grid-template-columns: repeat(3, 1fr);
+    align-items: center;
+  }
+
+  /* Make tabs span full width on larger screens */
+  .tabs {
+    grid-column: 1 / -1;
+  }
+
+  /* Make search button bigger and on the right */
+  .search {
+    grid-column: 3 / 4;
+    justify-self: end;
+    align-self: center;
+  }
+}
+
+/* Extras container (travelers, cabin, bags) */
+.extras {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  justify-content: stretch;
+  grid-column: 1 / -1;
+}
+
+.extras input,
+.extras select {
+  min-width: 0;
+  flex: 1;
+}
+
+/* Search button */
+.search {
+  background: linear-gradient(90deg, var(--accent), var(--accent-600));
+  color: white;
+  border: 0;
+  padding: 10px 18px;
+  border-radius: 10px;
+  font-weight: 700;
+  cursor: pointer;
+  height: 44px;
+  transition: transform .08s ease, opacity .1s ease;
+  box-shadow: 0 8px 24px rgba(37,99,235,0.12);
+}
+
+/* Hover & active for button */
+.search:hover { transform: translateY(-2px); }
+.search:active { transform: translateY(0); opacity: .95; }
+
+/* Small helpers */
+.card input::placeholder { color: #9ca3af; }
+.card select { appearance: none; -webkit-appearance: none; }
+
+/* Make inputs and layout compact on very small screens */
+@media (max-width: 419px) {
+  .card { padding: 12px; gap: 10px; }
+  .extras { flex-direction: column; }
+  .search { width: 100%; grid-column: 1 / -1; }
+}
+
+.booked {
+  color: gray;
+  background-color: #f5f5f5;
+  cursor: not-allowed;
+}
+
+/* BOOK FLIGHT ENABLED */
+.search {
+  background: linear-gradient(135deg, #2563eb, #1d4ed8);
+  color: white;
+  border: none;
+  padding: 14px;
+  font-size: 1rem;
+  margin-top: 16px;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: 0.2s ease;
+}
+
+/* BOOK FLIGHT DISABLED */
+.searchDisabled {
+  background: #9ca3af;
+  color: #e5e7eb;
+  padding: 14px;
+  font-size: 1rem;
+  margin-top: 16px;
+  border-radius: 10px;
+  pointer-events: none;   /* makes it unclickable */
+  user-select: none;
+  cursor: not-allowed;
+  opacity: 0.65;
+}
+
+/* CABIN THAT IS BOOKED / SOLD OUT */
+.booked {
+  color: #ef4444 !important;
+  background: #fee2e2;
+  font-weight: 600;
+}
+
+/* OPTIONAL: DISABLED OPTION STYLE (some browsers block option styling) */
+select option:disabled {
+  color: #b91c1c;
+  font-weight: bold;
+}
+
+/* EMAIL SECTION FIX – VERTICAL LAYOUT */
+.emailSection {
+  display: flex;
+  flex-direction: column;     /* force column layout */
+  gap: 6px;
+  grid-column: 1 / -1;        /* full width */
+  margin-top: 6px;
+  margin-bottom: 6px;
+}
+
+/* Typography for email notice text */
+.emailSection p {
+  font-size: 0.85rem;
+  color: var(--muted);
+  line-height: 1.4;
+  margin: 0;
+}
