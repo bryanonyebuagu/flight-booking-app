@@ -32,3 +32,62 @@
   color: var(--color-light--1);
   margin-bottom: 2.5rem;
 }
+
+/* Responsive for tablets and mobile */
+@media (max-width: 1024px) {
+  .homepage {
+    padding: 2rem 3rem;
+    margin: 2rem;
+  }
+
+  .homepage h1 {
+    font-size: 3rem;
+  }
+
+  .homepage h2 {
+    font-size: 1.5rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .homepage {
+    padding: 1.5rem 2rem;
+    margin: 1rem;
+  }
+
+  .homepage h1 {
+    font-size: 2rem;
+    line-height: 1.2;
+  }
+
+  .homepage h2 {
+    font-size: 1rem;
+  }
+
+  /* Hide PageNav menu items entirely on mobile */
+  nav ul {
+    display: none !important;
+  }
+
+  nav {
+    justify-content: flex-start; /* keep logo on the left */
+    padding: 0.5rem 1rem; /* gap from top/edges */
+  }
+}
+
+.cta {
+  background-color: var(--color-brand--2); /* green */
+  color: var(--color-dark--0); /* text color */
+  font-weight: 700; /* bold */
+  padding: 1rem 2rem; /* adjust size */
+  border-radius: 7px;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-size: 1.6rem;
+  transition: transform 0.2s ease, background-color 0.2s ease;
+}
+
+.cta:hover {
+  transform: scale(1.05);
+  background-color: #28a745; /* slightly darker green on hover */
+}

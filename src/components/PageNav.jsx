@@ -1,27 +1,26 @@
-import { NavLink } from "react-router-dom";
-import styles from "./PageNav.module.css";
 import Logo from "./Logo";
+import styles from "./PageNav.module.css";
 
 function PageNav() {
-    return (
-        <nav className={styles.nav}>
-            <Logo />
-            <ul>
-                <li>
-                    <NavLink to="/product">About us</NavLink>
-                </li>
-                <li>
-                    <NavLink to="/pricing">Pricing</NavLink>
-                </li>
-
-                <li>
-                    <NavLink to="/login" className={styles.ctaLink}>
-                        Login
-                    </NavLink>
-                </li>
-            </ul>
-        </nav>
-    );
+  return (
+    <nav className={styles.nav}>
+      <Logo />
+      {/* Menu items hidden on mobile via CSS, so we keep them for desktop */}
+      <ul>
+        <li>
+          <a href="/product">About us</a>
+        </li>
+        <li>
+          <a href="/pricing">Pricing</a>
+        </li>
+        <li>
+          <a href="/login" className={styles.ctaLink}>
+            Login
+          </a>
+        </li>
+      </ul>
+    </nav>
+  );
 }
 
 export default PageNav;

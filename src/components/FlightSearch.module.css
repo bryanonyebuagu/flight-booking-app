@@ -234,3 +234,24 @@ select option:disabled {
   line-height: 1.4;
   margin: 0;
 }
+
+/* Airline names in city suggestions */
+.suggestions li {
+  display: flex;
+  justify-content: space-between;
+  padding: 6px 10px;
+  cursor: pointer;
+  border-bottom: 1px solid #eee;
+  font-size: 0.95rem;
+}
+
+.suggestions li:hover {
+  background-color: rgba(37, 99, 235, 0.05);
+}
+
+.airlineList {
+  font-size: 0.8rem;
+  color: #555;
+  margin-left: 8px;
+  font-weight: 400;
+}
